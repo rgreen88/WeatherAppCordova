@@ -33,7 +33,7 @@
                 <input id="zip-code-input" name="zip-code" placeholder="eg. 98001" required />
                 <button id="get-weather-btn" data-role="button" data-icon="search">Find Weather</button>
             </form>
-        
+
             <!-- List Creation -->
             <ul id="weather-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
                 <li data-role="list-divider" id="title" class="ui-li-divider ui-bar-a"></li>
@@ -58,10 +58,12 @@
 
     </div>
     <!-- End WeatherApp code-->
+    <script src="scripts/weather.js"></script> <!-- Adding reference to newly created js file and other required js files for load -->
     <script src="scripts/jquery-1.8.0.min.js"></script>
     <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="scripts/platformOverrides.js"></script>
     <script type="text/javascript" src="scripts/index.js"></script>
+    <!-- above scripts tells html to load the js files identified in script tag -->
 </body>
 </html>
