@@ -15,11 +15,53 @@
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
     <title>WeatherAppCordova</title>
 </head>
-    <body>
-        <script src="scripts/jquery-1.8.0.min.js"></script>
-        <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-    </body>
+<body>
+    <!--
+        Adding elements to display and store weather data. Including events for retrieving weather data with user input data.
+        Setting up UI elements to WeatherApp.
+    -->
+    <div data-role="page" id="weather-page">
+
+        <div data-role="header" class="header">
+            <h1 id="app-title">Weather App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <form>
+                <label for="zip-code">Type your zip code:</label>
+                <input id="zip-code-input" name="zip-code" placeholder="eg. 98001" required />
+                <button id="get-weather-btn" data-role="button" data-icon="search">Find Weather</button>
+            </form>
+        
+            <!-- List Creation -->
+            <ul id="weather-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
+                <li data-role="list-divider" id="title" class="ui-li-divider ui-bar-a"></li>
+                <li><span id="summary"><span id="temperature"></span> F <img src="" /></span></li>
+                <li>Wind: <span id="wind"></span> knots</li>
+                <li>Humidity: <span id="humidity"></span> %</li>
+                <li>Visibility: <span id="visibility"></span></li>
+                <li>Sunrise: <span id="sunrise"></span></li>
+                <li>Sunset: <span id="sunset"></span></li>
+            </ul>
+
+            <!-- Error upon unsuccessful retrieval for data from api-->
+            <div id="error-msg" class="not-displayed">
+            </div>
+
+        </div>
+
+        <!-- Cordova credit courtesy of Microsoft -->
+        <footer data-role="footer" data-position="fixed">
+            <h4>Visual Studio Tools for Cordova Demo</h4>
+        </footer>
+
+    </div>
+    <!-- End WeatherApp code-->
+    <script src="scripts/jquery-1.8.0.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
 </html>
